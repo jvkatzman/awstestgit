@@ -23,7 +23,7 @@ var dbPath  = "mongodb://"+config.USER + ":"+
 var standardGreeting="Hello World ! Yes!";
 
 var greetingSchema = mongoose.Schema({
-    sentence:string
+    sentence:String
 });
 var Greeting=mongoose.model('Greeting', greetingSchema);
 
