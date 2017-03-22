@@ -41,7 +41,12 @@ mongoose.connection.once('open', function(){
 
 app.get('/',function(req,res){
     Greeting.findOne(function(err,greeting){
-        res.send(greeting.sentence);
+        if (err) { res.send('error');}
+        if(greeting){
+            res.send(greeting.sentence);
+        } else{
+            res.send('no greeting');
+        }
     });
 });
 
@@ -56,4 +61,4 @@ app.use(function(err,req,res,next){
 
 console.log('starting the Express (NodeJS) Web server');
 app.listen(8080);
-console.log('Webserver is listening on port 8080');
+console.log('Webserver is listening on port 8080 version 2');
