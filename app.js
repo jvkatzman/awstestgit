@@ -8,7 +8,7 @@ var db;
 var config = {
     "USER":"",
     "PASS":"",
-    "HOST":"ec2-34-205-15-214.compute-1.amazonaws.com",
+    "HOST":"ec2-54-234-24-25.compute-1.amazonaws.com",
     "PORT":"27017",
     "DATABASE":"my_example"
 };
