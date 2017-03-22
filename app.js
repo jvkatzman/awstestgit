@@ -45,6 +45,9 @@ app.get('/',function(req,res){
         if(greeting){
             res.send(greeting.sentence);
         } else{
+            var greeting;
+            greeting = new Greeting({sentence: standardGreeting});
+            greeting.save();
             res.send('no greeting');
         }
     });
@@ -55,11 +58,7 @@ app.use(function(err,req,res,next){
         res.send(500,'Something went wrong');
     }
     else {
-        var greeting;
-        greeting = new Greeting({sentence: standardGreeting});
-        greeting.save();
-
-        // next(err);
+        next(err);
     }
 });
 
