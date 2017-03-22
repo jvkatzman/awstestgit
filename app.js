@@ -31,7 +31,7 @@ db=mongoose.connect(dbPath);
 
 mongoose.connection.once('open', function(){
     var greeting;
-    Greeting.find ( function(err, greetings){
+    Greeting.find(function(err, greetings){
         if(!greetings){
             greeting = new Greeting({sentence: standardGreeting});
             greeting.save();
@@ -56,4 +56,4 @@ app.use(function(err,req,res,next){
 
 console.log('starting the Express (NodeJS) Web server');
 app.listen(8080);
-console.log('Webserver is listinging on port 8080');
+console.log('Webserver is listening on port 8080');
