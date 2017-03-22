@@ -55,7 +55,11 @@ app.use(function(err,req,res,next){
         res.send(500,'Something went wrong');
     }
     else {
-        next(err);
+        var greeting;
+        greeting = new Greeting({sentence: standardGreeting});
+        greeting.save();
+
+        // next(err);
     }
 });
 
