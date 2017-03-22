@@ -32,7 +32,7 @@ db=mongoose.connect(dbPath);
 mongoose.connection.once('open', function(){
     var greeting;
     Greeting.find(function(err, greetings){
-        if(!greetings){
+        if(greetings == null){
             greeting = new Greeting({sentence: standardGreeting});
             greeting.save();
         }
